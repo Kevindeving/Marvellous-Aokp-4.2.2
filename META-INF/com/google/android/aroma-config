@@ -1,0 +1,301 @@
+﻿# MarvellousSense-The ultimate sense way-Aroma Config by Kevinjoa
+
+ini_set("rom_name",             ".AOKP");
+ini_set("rom_version",          "v1 - Experimental");
+ini_set("rom_author",           "Kevinjoa");
+ini_set("rom_device",           "HTC Wildfire S");
+ini_set("rom_date",             "May ,17th, 2013");
+ini_set("rom_codename",             "Marvellous");
+
+ini_set("text_ok", "OK");
+ini_set("text_next", "Next >");
+ini_set("text_back", "< Back");
+ini_set("text_yes", "Yes");
+ini_set("text_no", "No");
+ini_set("text_about", "About");
+ini_set("text_quit", "Quit Installation");
+ini_set("text_quit_msg", "Really Quit the installation?");
+
+splash(5000, "splash");
+
+fontresload( "0", "ttf/Roboto-Regular.ttf;ttf/DroidSansArabic.ttf;ttf/DroidSansFallback.ttf;", "12" ); #-- Use sets of font (Font Family)
+
+theme("ics");	
+
+viewbox(
+	".AOKP ",
+	"\n\n\n\n\n\n\n\n\n\n"+
+	"<#0000ff>Welcome!</#>\n\n\n\n"+
+	"You are about to flash Marvellous Aokp.\n\n"+
+	"<b>Build: v1.1 -Beta</b>\n"+
+	"<b>Datum: 30/31.05.2013</b>\n\n"+
+	"Please click next to go on."+
+	"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"+
+	"by Kevinjoa..",
+	"icons/sensian"
+);
+	
+agreebox(
+	"Infos",
+	"Please read the informations before flashing:",
+	"icons/alert",
+	readfile_aroma("informations.txt"),
+	"I've read the information.",
+	"Please read the informations before flashing!"
+);  
+
+selectbox(
+  "GPS Configuration",
+  "Select your country from the list below",
+  "@customize",
+  "gps.prop",
+
+  "Installs the right gps.conf file for your country to increase gps accuracy & lock-speed\n","",2,#--selected.1
+
+  "Angola","",0,
+  "Argentina","",0,
+  "Australia","",0,
+  "Austria","",0,
+  "Bangladesh","",0,
+  "Belarus","",0,
+  "Belgium","",0,
+  "Bosnia & Herzegovina","",0,
+  "Brazil","",0,
+  "Bulgaria","",0,
+  "Cambodia","",0,
+  "Canada","",0,
+  "Chile","",0,
+  "China","",0,
+  "Costa-Rica","",0,
+  "Croatia","",0,
+  "Czech Republic","",0,
+  "Denmark","",0,
+  "El Salvador","",0,
+  "Estonia","",0,
+  "Finland","",0,
+  "France","",0,
+  "Germany","",0,
+  "Greece","",0,
+  "Guatemala","",0,
+  "Hong-Kong","",0,
+  "Hungary","",0,
+  "India","",0,
+  "Indonesia","",0,
+  "Iran","",0,
+  "Ireland","",0,
+  "Israel","",0,
+  "Italy","",0,
+  "Japan","",0,
+  "Korea","",0,
+  "Kyrgyzstan","",0,
+  "Latvia","",0,
+  "Lithuania","",0,
+  "Luxembourg","",0,
+  "Macedonia","",0,
+  "Madagascar","",0,
+  "Malaysia","",0,
+  "Mexico","",0,
+  "Moldova","",0,
+  "Netherlands","",0,
+  "New Caledonia","",0,
+  "New Zealand","",0,
+  "Norway","",0,
+  "Oman","",0,
+  "Pakistan","",0,
+  "Panama","",0,
+  "Philippines","",0,
+  "Poland","",0,
+  "Portugal","",0,
+  "Qatar","",0,
+  "Republic of Serbia","",0,
+  "Romania","",0,
+  "Russian Federation","",0,
+  "Saudi Arabia","",0,
+  "Singapore","",0,
+  "Slovakia","",0,
+  "Slovenia","",0,
+  "South Africa","",0,
+  "Spain","",0,
+  "Sri Lanka","",0,
+  "Sweden","",0,
+  "Switzerland","",0,
+  "Taiwan","",0,
+  "Tanzania","",0,
+  "Thailand","",0,
+  "Turkey","",0,
+  "Ukraine","",0,
+  "United Arab Emirates","",0,
+  "United Kingdom","",0,
+  "United States of America","",0,
+  "Uzbekistan","",0,
+  "Venezuela","",0,
+  "Vietnam","",0,
+  "Yugoslavia","",0,
+
+"Continents","Use your continent file if your country isn't on the list",2,
+
+  "Africa","",0,
+  "Asia","",0,
+  "Europe","",0,
+  "North America","",0,
+  "Oceania","",0,
+  "South America","",0
+);
+
+checkbox(
+   "Bloatware",
+   "Which Bloatware do you want to have ?",
+   "icons/apps",
+   "thebloat.prop",
+   "Email",                                      "Stock JB mail app",                           1,
+   "G-Talk",                                     "Google Talk app from google",                 0,
+   "Hosts",                                      "Block hosts (no ads)",                        1,
+   "Rom Manager",                                "For Ota Updates ",                            1
+);   
+   
+
+ selectbox(
+		"Design",
+		"No themes a la Sense, Touchwiz or Timescape UI this time.",
+		"@personalize",
+		"theme.prop",
+
+		"Select your design. All themes by SpadaBoss.",	"",					                        2,  
+		"Holo",		 								    "Stock CM10 design",						0,	
+		"Translucent Holo",					    "Transparent Holo UI!",				    	        0,	
+		"Full Holo",		 			    "For a better Holo experience",		 			        0,	
+		"Dust Holo Theme",		 				"A grey Holo theme",			                    1,
+        "Sense5",                            "Sense5 look alike theme",                             0,
+        "Lg Optimus Ui",                  "Lg Optimus Ui look alike theme",                         0,
+        "Touchwiz Ux",                   "Touchwiz Ux look alike theme",                            0,
+        "Sony Ui",                      "Sony Ui look alike theme",                                       0  		
+);
+		
+selectbox(
+   "LAUNCHER",
+   "Which Launcher do you wanna use ?",
+   "icons/apps",
+   "launchers.prop",
+   "Trebuchet",                  "Stock Cm10.1 Launcher",                                                              1,
+   "Nova",                       "Nova Launcher which is really fast :D",                                              0,
+   "Apex",                       "Apex Launcher which is good customizeable",                                        0,
+   "Holo Launcher",              "Holo Launcher fast and stable",                                                      0,
+   "Buzz launcher ",             "Ultra Customizeable Launcher",                                                         0,
+   "Windowsphone",               "Windowsphoen 8 look alike Launcher",                                                   0
+);   
+
+selectbox(
+   "Music Player",
+   "Which Music player do you wanna use ?",
+   "icons/apps",
+   "music.prop",
+   "Apollo",                    "Stock cm/aokp music player",                                                         1,
+   "Noozy",                     "Windowsphone look alike music player with built in equalizer",                       0,
+   "Omich",                     "Small lite mix between Apollo and play music",                                       0   
+);   
+
+checkbox(
+  "Music Sound Mods",
+  "Which Soundmods/equalizer do you wanna have ? ",
+  "icons/customize",
+  "beats.prop",
+  "Clearaudio+",                "Makes Sound more clear and give you ",                                                0,
+  "Dsp Manager",                "Cyanogenmod/AOKP Equalizer",                                                          0,
+  "NOOZXOIDE EIZO-REWIRE™PRO",  "Good equalizer",                                                                      0,
+  "Viper Sound Mod",            "Best equalizer in my opinion",                                                        1
+);  
+
+checkbox(
+  "TWEAKS",
+  "Let us look for some nice tweaks",
+  "icons/customize",
+  "tweaks.prop",
+  "Touchscreen Responsiveness",     "Tweaks the touchscreen for a better responsiveness and user experience",          0,  
+  "Internet speed tweaks",          "Improves general browsing speed",                                                 0,
+  "Battery consumption tweaks",     "Makes battery last longer",                                                       0,
+  "Optimize sqlite3 databases",     "Increases read/write speed of apps using databases (i.e : people)",               0,
+  "Defragmention of sqlite3 databases at each boot",           "Defrags databases to increase write-speed",            0,
+  "Use strict minimum free memory handlers",                 "Improves performances",                                  0,
+  "Improve ext4 file-systems Performance",       "Enable data_writeback and improve I/O speed for ext4 partitions",    0,  
+  "Force GPU 2D Rendering",                       "Force GPU rendering on 2D operations",                              0,
+  "Miscellanous ram tweaks",                               "Several memory management improvements",                   0,  
+  "Improve Multi-Tasking","Change system task-killer settings",                                                        0,  
+  "Add SQLite Tweaks","Run VACUUM & REINDEX on each boot for better performance",                                      0,
+  "Use CFS tweaks","Improves the behaviour of the Completely Fair Scheduler",                                          0,
+  "Install various init.d smoothness tweaks","Improve general responsiveness",                                         0,
+  "Enable External-Sdcard I/O tweaks","Improves ext-sd write/read speed and mount speed",                              0,
+  "Enable Internal Sdcard I/O tweaks","Improves internal sdcard write/read speed and mount speed",                     0,
+  "Zipalign apks at each boot","Will zipalign all apk files to increase smoothness",                                   0
+);
+
+checkbox(
+  "Build.prop Tweaks",
+  "Tick the tweaks you want to install :",
+  "@customize",
+  "buildprop.prop",
+
+  ">>> INSTALL ALL TWEAKS <<<","Will apply every tweaks from the list below",0,
+  "3G Signal and Speed tweaks","Improve signal reception and dl/ul speed when using 3g",0,
+  "Battery saving tweaks","Saves battery without reducing performances",0,
+  "Camera quality tweaks","Increase camera's photo and video recording quality",0,
+  "Wifi tweaks","Connects and disconnects faster",0,
+  "Dalvik Ram tweaks","More free ram and apps load faster",0,
+  "Deeper Sleep","Saves more battery when on sleep mode",0,
+  "Dialing time tweaks","Dials faster, phone will ring instantly",0,
+  "Increase Jpg images quality","Raises the jpg image quality to 100%",0,
+  "Flash-Led Tweaks","Better flash-led intensity and camera-flash quality",0,
+  "Lock launcher in memory","Keeps your default launcher in memory to reduce redraws",0,
+  "Internet speed tweaks","Faster browsing and downloads",0,
+  "Touchscreen tweaks","Increase general touchscreen responsiveness",0,
+  "Remove black screen after calling","Reduces the time proximity sensor takes to make screen on",0,
+  "Allow purgeable assets","Free-up more ram",0,
+  "Scrolling tweaks","Better, faster and stronger scrolling",0,
+  "Video-Streaming tweaks","Smoother and faster internet video streaming",0,
+  "Quick Power-On","The device will boot faster",0
+);  
+  
+selectbox(
+   "Memory twekas",
+   "Which tweak do you want to use ?",
+   "icons/apps",
+   "memory.prop",
+   "Link2sd.",                      "Link2sd: Must be activated in system to work",                                    0,
+   "Int2ext+",                      "A background Script like Data2sd, fast but needs some space ",                    0,
+   "Int2ext",                       "Just like Data2sd",                                                               1
+);   
+   
+   
+ini_set("text_next", "Install!");
+ini_set("text_back", "Check");
+
+viewbox(
+	"<#ff0000>Last Warning!</#>",
+	"\n\n\n\n\n"+
+	"by pressing install rom will be installed.\n\n\n"+
+	"To quit, please press Search-Key\n"+
+	"and choose quit installation.\n\n"+
+	"If you want to check your settings please press\n"+
+	"please check.",
+	"icons/alert"
+);
+
+ini_set("text_next", "OK");
+
+install(
+	"Installing...",
+	".Aokp Rom will be installed now.\n"+
+	"Please wait until the rom installation is finished.",
+	"icons/install"
+);
+
+ini_set("text_next", "Quit!");
+ini_set("text_back", "< Back");
+
+viewbox(
+	"It's DONE !!",
+	"\n\n\n\n\n\n\n"+
+	"The .Aokp-ROM is sucssesfully flashed.\n\n"+
+	"First boot can take a while ,so please wait.\n\n"+
+	"Enjoy your customized phone!",
+	"icons/install"
+);
